@@ -3,7 +3,8 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;;
+  font-family: 'Raleway', sans-serif;
+  background: #F5F6FA;
 }
 h1,
 h2,
@@ -88,9 +89,9 @@ button:active, button:focus, input:active, input:focus{
     padding: 10px 30px;
 }
 
-  /* ************ */
+  /* ************* */
  /* signup styles */
-/* ************ */
+/* ************* */
 .signup{
     display: flex;
     justify-content: center;
@@ -151,4 +152,393 @@ button:active, button:focus, input:active, input:focus{
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
+}
+
+  /* ************* */
+ /* navbar styles */
+/* ************* */
+.navbar{
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(-90deg,#B842E1 0,#B26EF2 31%,#920BC1 100%);
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+.navbar-logo{
+    height: 40px;
+    width: auto;
+}
+.navbar-avi{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #ffffff;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+}
+.navbar-toggler{
+    display:none;
+}
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+.navbar-right > p{
+    color: #ffffff;
+    margin-right: 15px;
+}
+@media only screen and (max-width: 900px){
+    .navbar{
+        height: 70px;
+        padding: 0 5%;
+        z-index: 2;
+    }
+    .navbar-logo{
+        height: 30px;
+        width: auto;
+    }
+    .navbar-avi{
+        height: 35px;
+        width: 35px;
+    }
+    .navbar-right{
+        display: flex;
+        align-items: center;
+    }
+    .navbar-right > p{
+        color: #ffffff;
+        margin-right: 15px;
+    }
+    .navbar-toggler{
+        display: initial;
+        margin-right: 10px;
+        border: 0;
+        background: transparent;
+    }
+    .navbar-toggler:focus{
+        outline: 0;
+    }
+    .navbar-toggler .icon-bar{
+        background-color: #ffffff;
+        transform: rotate(0deg) translate(0px, 0px);
+        transition: ease all .2s;
+    }
+    .navbar-toggler .icon-bar{
+        display: block;
+        width: 26px;
+        height: 2px;
+        border-radius: 1px;
+    }
+    .navbar-toggler .icon-bar + .icon-bar{
+        margin-top: 6px;
+    }
+    .icon-bar:nth-child(1){
+        width: 13px;
+        transition: ease all .2s;
+    }
+    .icon-bar:nth-child(2){
+        width: 24px;
+        transition: ease all .2s;
+    }
+    .icon-bar:nth-child(3){
+        width: 13px;
+        margin-left: 12px;
+        transition: ease all .2s;
+    }
+}
+  /* ************** */
+ /* sidebar styles */
+/* ************** */
+#sidebar{
+    width: 250px;
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    bottom: 20px;
+    border: 1.5px solid #920BC1;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    background: #ffffff;
+}
+#sidebar > .closebtn{
+    display: none;
+}
+.sidebar-top{
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar-avi{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #920BC1;
+    margin-bottom: 10px;
+}
+.sidebar-top > .name{
+    font-size: 16px;
+}
+.sidebar-top > .email{
+    font-size: 12px;
+}
+#sidebar .menu-items > a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+#sidebar .menu-items > a.active{
+    background-color: #920BC1;
+    color: #ffffff;
+}
+#sidebar .menu-items > a:hover {
+    opacity: 0.5;
+}
+#sidebar .menu-items > a.active:hover{
+   opacity: initial;
+}
+@media only screen and (max-width: 900px){
+    #sidebar{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        margin-left: -3px;
+        overflow-x: hidden;
+        transition: 0.5s;
+        z-index: 2;
+    }
+    #sidebar > .closebtn {
+        display: initial;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 36px;
+        cursor: pointer;
+    }
+}
+  /* **************** */
+ /* dashboard styles */
+/* **************** */
+.dashboard{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.dashboard-top{
+    display: flex;
+    margin-bottom: 30px;
+}
+.dashboard-top > .card-item:first-child{
+    width: 50%;
+    padding-right: 15px;
+}
+.dashboard-top > .card-item:last-child{
+    width: 50%;
+    padding-left: 15px;
+}
+.dashboard-top .amount-div{
+    padding: 20px 40px;
+    border-radius: 5px;
+    width: 100%;
+    background: linear-gradient(-90deg,#B842E1 0,#B26EF2 31%,#920BC1 100%);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+}
+.dashboard-top .amount-top{
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
+.dashboard-top .amount{
+    text-align:center;
+    color: #ffffff;
+    font-size: 48px;
+}
+.dashboard-top .small{
+    font-size: 36px;
+}
+.dashboard-top .amount-div p{
+    text-align: center;
+    color: #ffffff;
+}
+.dashboard-top .tip-div{
+    padding: 20px 40px;
+    border-radius: 5px;
+    width: 100%;
+    background: #ffffff;
+    height: 200px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    position: relative;
+}
+.dashboard-top .tip-div h3{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.dashboard-top .tip-div p{
+    width: 50%;
+}
+.dashboard-top .tip-div .tip-image{
+   height: 150px;
+   width: auto;
+   position: absolute;
+   top: 25px;
+   right: 30px;
+}
+.recent-trans{
+    background: #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+}
+.recent-top{
+    padding: 15px 40px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+}
+.recent-top > i{
+    font-size: 10px;
+    margin-right: 15px;
+    color: #920BC1;
+}
+.recent-top > p{
+    font-weight: bold;
+}
+.recent-body{
+    padding: 15px 40px;
+}
+.recent-day{
+    margin-bottom: 10px;
+}
+.recent-day > .date{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.recent-day > .transaction{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-bottom: 1px;
+    background: #F2F2F2;
+}
+.credit{
+    color: #4BCA81;
+}
+.debit{
+    color: #BC3E06;
+}
+@media only screen and (max-width: 900px){
+    .dashboard{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .dashboard-top .amount-div{
+        padding: 20px;
+        height: 200px;
+    }
+    .dashboard-top .amount{
+        font-size: 36px;
+    }
+    .dashboard-top .small{
+        font-size: 24px;
+    }
+    .dashboard-top .tip-div{
+        padding: 20px;
+    }
+    .dashboard-top .tip-div h3{
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .dashboard-top .tip-div p{
+        width: 50%;
+    }
+    .dashboard-top .tip-div .tip-image{
+       height: auto;
+       width: 50%;
+       position: absolute;
+       top: 25px;
+       right: 30px;
+    }
+}
+@media only screen and (max-width: 536px){
+    .dashboard{
+        padding-top: 0;
+    }
+    .dashboard-top{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .dashboard-top > .card-item:first-child{
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .dashboard-top > .card-item:last-child{
+        width: 100%;
+        padding-left: 0;
+    }
+    .dashboard-top .amount-div{
+        height: 150px;
+    }
+    .dashboard-top .amount{
+        font-size: 36px;
+    }
+    .dashboard-top .small{
+        font-size: 24px;
+    }
+    .dashboard-top .tip-div{
+        height: auto;
+        z-index: 1;
+    }
+    .dashboard-top .tip-div h3{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .dashboard-top .tip-div p{
+        width: 50%;
+    }
+    .dashboard-top .tip-div .tip-image{
+       height: auto;
+       width: 40%;
+       position: absolute;
+       top: 15px;
+       right: 20px;
+    }
+    .recent-top{
+        padding: 15px 20px;
+        border-bottom: 1px solid #eaeaea;
+        display: flex;
+        align-items: center;
+    }
+    .recent-body{
+        padding: 15px 20px;
+    }
+    .recent-day{
+        margin-bottom: 10px;
+    }
+    .recent-day > .transaction{
+        padding: 10px;
+        font-size: 12px;
+    }
+    .recent-day > .transaction > p:last-child{
+        margin-left: 20px;
+    }
 }
