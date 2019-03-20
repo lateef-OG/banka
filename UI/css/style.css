@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:700|Raleway|Roboto+Mono');
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+button{
+    cursor: pointer;
+}
+button:active, button:focus, input:active, input:focus{
+    outline: none;
+}
+* {
+  box-sizing: border-box;
+}
+  /* ************ */
+ /* login styles */
+/* ************ */
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+.login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+.login-content > .logo{
+    margin-bottom: 30px;
+}
+.login-form{
+    width: 100%;
+}
+.login-form > input{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.login-form > input:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.25s;
+}
+.login-form > button{
+    width: 100%;
+    height: 36px;
+    border-radius: 18px;
+    border: 1px solid #920BC1;
+    background-color: #920BC1;
+    color: #ffffff;
+    margin-top: 15px;
+}
+.login-content > p{
+    font-size: 12px;
+    margin-top: 15px;
+}
+.login-content > p > a{
+    color: #920BC1;
+}
+.login > .footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #D9D3D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+  /* ************ */
+ /* signup styles */
+/* ************ */
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+.signup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+.signup-content > .logo{
+    margin-bottom: 30px;
+}
+.signup-form{
+    width: 100%;
+}
+.signup-form > input{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.signup-form > input:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.25s;
+}
+.signup-form > button{
+    width: 100%;
+    height: 36px;
+    border-radius: 18px;
+    border: 1px solid #920BC1;
+    background-color: #920BC1;
+    color: #ffffff;
+    margin-top: 15px;
+}
+.signup-content > p{
+    font-size: 12px;
+    margin-top: 15px;
+}
+.signup-content > p > a{
+    color: #920BC1;
+}
+.signup > .footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #D9D3D3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
