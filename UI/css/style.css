@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Assistant:700|Raleway|Roboto+Mono');
+/* *************** */
+/* General styles */
+/* ************* */
 body,
 html {
   margin: 0;
@@ -23,6 +26,41 @@ button:active, button:focus, input:active, input:focus{
 }
 * {
   box-sizing: border-box;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal > .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    position: relative;
+}
+.modal > .modal-content > .close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.modal > .modal-content > .close:hover,
+.modal > .modal-content > .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
   /* ************ */
  /* login styles */
@@ -58,7 +96,7 @@ button:active, button:focus, input:active, input:focus{
 .login-form > input:focus{
     outline: none;
     border: 1px solid #920BC1;
-    transition: ease-in 0.25s;
+    transition: ease-in 0.15s;
 }
 .login-form > button{
     width: 100%;
@@ -123,7 +161,7 @@ button:active, button:focus, input:active, input:focus{
 .signup-form > input:focus{
     outline: none;
     border: 1px solid #920BC1;
-    transition: ease-in 0.25s;
+    transition: ease-in 0.15s;
 }
 .signup-form > button{
     width: 100%;
@@ -197,7 +235,7 @@ button:active, button:focus, input:active, input:focus{
     color: #ffffff;
     margin-right: 15px;
 }
-.navbar-right > .logout-btn{
+.navbar-right .logout-btn{
     margin-left: 15px;
     height: 36px;
     background: transparent;
@@ -595,41 +633,6 @@ button:active, button:focus, input:active, input:focus{
     display: flex;
     justify-content: space-between;
 }
-/* .dashboard-top .amount{
-    text-align:center;
-    color: #ffffff;
-    font-size: 48px;
-}
-.dashboard-top .small{
-    font-size: 36px;
-}
-.dashboard-top .amount-div p{
-    text-align: center;
-    color: #ffffff;
-}
-.dashboard-top .tip-div{
-    padding: 20px 40px;
-    border-radius: 5px;
-    width: 100%;
-    background: #ffffff;
-    height: 200px;
-    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
-    position: relative;
-}
-.dashboard-top .tip-div h3{
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-.dashboard-top .tip-div p{
-    width: 50%;
-}
-.dashboard-top .tip-div .tip-image{
-   height: 150px;
-   width: auto;
-   position: absolute;
-   top: 25px;
-   right: 30px;
-} */
 .recent-trans{
     background: #ffffff;
     border-radius: 5px;
@@ -696,29 +699,6 @@ button:active, button:focus, input:active, input:focus{
         font-size: 12px;
         margin-bottom: 15px;
     }
-    /* .dashboard-top .amount{
-        font-size: 36px;
-    }
-    .dashboard-top .small{
-        font-size: 24px;
-    }
-    .dashboard-top .tip-div{
-        padding: 20px;
-    }
-    .dashboard-top .tip-div h3{
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-    .dashboard-top .tip-div p{
-        width: 50%;
-    }
-    .dashboard-top .tip-div .tip-image{
-       height: auto;
-       width: 50%;
-       position: absolute;
-       top: 25px;
-       right: 30px;
-    } */
 }
 @media only screen and (max-width: 536px){
     .transactions{
@@ -752,30 +732,6 @@ button:active, button:focus, input:active, input:focus{
         font-size: 12px;
         margin-bottom: 15px;
     }
-    /* .dashboard-top .amount{
-        font-size: 36px;
-    }
-    .dashboard-top .small{
-        font-size: 24px;
-    }
-    .dashboard-top .tip-div{
-        height: auto;
-        z-index: 1;
-    }
-    .dashboard-top .tip-div h3{
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .dashboard-top .tip-div p{
-        width: 50%;
-    }
-    .dashboard-top .tip-div .tip-image{
-       height: auto;
-       width: 40%;
-       position: absolute;
-       top: 15px;
-       right: 20px;
-    } */
     .recent-top{
         padding: 15px 20px;
         border-bottom: 1px solid #eaeaea;
@@ -794,5 +750,177 @@ button:active, button:focus, input:active, input:focus{
     }
     .recent-day > .transaction > p:last-child{
         margin-left: 20px;
+    }
+}
+  /* ******************* */
+ /* user profile styles */
+/* ******************* */
+.user-profile{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+}
+.user-profile > .profile-card{
+    background: #ffffff;
+    padding: 40px;
+    width: 60%;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-profile > .profile-card .edit-btn{
+    background: transparent;
+    color: #920BC1;
+    border: 1.5px solid #920BC1;
+    border-radius: 3px;
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.user-profile > .profile-card > .profile-pic{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #920BC1;
+    margin-bottom: 20px;
+}
+.user-profile > .profile-card > .edit-profile-pic{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #920BC1;
+    margin-bottom: 5px;
+}
+.user-profile > .profile-card > .edit-picture-btns{
+    display: flex;
+    margin-bottom: 20px;
+}
+.user-profile > .profile-card > .edit-picture-btns > .upload-btn{
+    height: 36px;
+    width: 120px;
+    background: #920BC1;;
+    color: #ffffff;
+    border: 1.5px solid #920BC1;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-right: 15px;
+}
+.user-profile > .profile-card > .edit-picture-btns > .delete-btn{
+    height: 36px;
+    width: 120px;
+    background: #BC3E06;;
+    color: #ffffff;
+    border: 1.5px solid #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.user-profile > .profile-card > h4{
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+.user-profile > .profile-card > p{
+    margin-bottom: 5px;
+}
+.user-profile > .profile-card > .last-login{
+    font-size: 14px;
+}
+.user-profile > .profile-card > .change-pass-btn{
+    height: 36px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 20px;
+}
+.user-profile > .profile-card > input{
+    width: 50%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+.user-profile > .profile-card > input:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+@media only screen and (max-width: 900px){
+    .user-profile{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+}
+@media only screen and (max-width: 536px){
+    .user-profile{
+        padding-top: 0;
+    }
+    .user-profile > .profile-card{
+        padding: 40px 20px;
+        width: 100%;
+    }
+    .user-profile > .profile-card > input{
+        width: 100%;
+    }
+}
+  /* ********************** */
+ /* change password styles */
+/* ********************** */
+.change-pass-div{
+    width: 300px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.change-pass-div > .title{
+    color: #920BC1;
+    margin-bottom: 30px;
+}
+.change-pass-div > input{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+}
+.change-pass-div > input:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.change-pass-div > button{
+    height: 36px;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 536px){
+    .change-pass-div{
+        width: 270px;
+        padding: 20px 10px;
     }
 }
