@@ -98,7 +98,7 @@ button:active, button:focus, input:active, input:focus{
     border: 1px solid #920BC1;
     transition: ease-in 0.15s;
 }
-.login-form > button{
+.login-form button{
     width: 100%;
     height: 36px;
     border-radius: 18px;
