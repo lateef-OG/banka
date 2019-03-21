@@ -44,30 +44,20 @@
                 <a href="profile.html"  class="active">Profile</a>
         </div>
     </nav>
-    <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="change-pass-div">
-              <div class="title">Change Password</div>
-              <input type="password" placeholder="Enter old password">
-              <input type="password" placeholder="Enter new password">
-              <input type="password" placeholder="Confirm new password">
-              <button>Save</button>
-          </div>
-        </div>
-      
-      </div>
     <main class="user-profile">
         <div class="profile-card">
-            <a href="edit-profile.html">
-                <button class="edit-btn">Edit</button>
+            <a href="profile.html">
+                <button class="edit-btn">Cancel</button>
             </a>
-            <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="profile-pic">
-            <h4>Lateef ogunbadejo</h4>
-            <p>08123456789</p>
-            <p>lateefogunbadejo@yahoo.com</p>
-            <p class="last-login">Last Login - 21st March 2019, 1:34pm</p>
-            <button class="change-pass-btn" id="openModal">Change Password</button>
+            <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="edit-profile-pic">
+            <div class="edit-picture-btns">
+                <button class="upload-btn">Upload Picture</button>
+                <button class="delete-btn">Delete Picture</button>
+            </div>
+            <input type="text" placeholder="Your name" value="Lateef Ogunbadejo">
+            <input type="text" placeholder="Your phone number" value="08123456789">
+            <input type="email" placeholder="Your phone number" value="lateefogunbadejo@yahoo.com">
+            <button class="change-pass-btn">Save Changes</button>
         </div>
     </main>
     <script src="js/app.js"></script>
