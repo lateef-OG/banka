@@ -1086,6 +1086,14 @@ button:active, button:focus, input:active, input:focus{
     background: #920BC1;
     color: #ffffff;
 }
+.overview .recent-accounts .recent-top > i{
+    font-size: 10px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+.overview .recent-accounts .recent-body{
+    padding: 15px 20px;
+}
 .overview .recent-accounts .recent-body .account{
     display: flex;
     justify-content: space-between;
@@ -1095,105 +1103,39 @@ button:active, button:focus, input:active, input:focus{
 .overview .recent-accounts .recent-body .account:last-child{
     border-bottom: 0;
 }
-.dashboard-top .amount-div{
-    padding: 20px 40px;
-    border-radius: 5px;
-    width: 100%;
-    background: linear-gradient(-90deg,#B842E1 0,#B26EF2 31%,#920BC1 100%);
-    height: 200px;
+.overview .recent-accounts .recent-bottom{
+    padding: 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    justify-content: center;
+    border-top: 1px solid #eaeaea;
 }
-.dashboard-top .amount-top{
-    display: flex;
-    justify-content: space-between;
+.overview .recent-accounts .recent-bottom > .view-all{
+    height: 36px;
+    width: 120px;
+    background: #920BC1;;
     color: #ffffff;
-}
-.dashboard-top .amount{
-    text-align:center;
-    color: #ffffff;
-    font-size: 48px;
-}
-.dashboard-top .small{
-    font-size: 36px;
-}
-.dashboard-top .amount-div p{
-    text-align: center;
-    color: #ffffff;
-}
-.dashboard-top .tip-div{
-    padding: 20px 40px;
-    border-radius: 5px;
-    width: 100%;
-    background: #ffffff;
-    height: 200px;
-    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
-    position: relative;
-}
-.dashboard-top .tip-div h3{
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-.dashboard-top .tip-div p{
-    width: 50%;
-}
-.dashboard-top .tip-div .tip-image{
-   height: 150px;
-   width: auto;
-   position: absolute;
-   top: 25px;
-   right: 30px;
-}
-.recent-trans{
-    background: #ffffff;
-    border-radius: 5px;
-    width: 100%;
-    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
-}
-.recent-top{
-    padding: 15px 40px;
-    border-bottom: 1px solid #eaeaea;
-    display: flex;
-    align-items: center;
-}
-.recent-top > i{
-    font-size: 10px;
+    border: 1.5px solid #920BC1;
+    border-radius: 3px;
+    font-size: 14px;
     margin-right: 15px;
-    color: #920BC1;
-}
-.recent-top > p{
-    font-weight: bold;
-}
-.recent-body{
-    padding: 15px 40px;
-}
-.recent-day{
-    margin-bottom: 10px;
-}
-.recent-day > .date{
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-.recent-day > .transaction{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    margin-bottom: 1px;
-    background: #F2F2F2;
-}
-.credit{
-    color: #4BCA81;
-}
-.debit{
-    color: #BC3E06;
 }
 @media only screen and (max-width: 900px){
-    .dashboard{
+    .overview{
         margin-top: 100px;
         margin-left: 0;
         padding: 40px 5%;
+    }
+    .overview-top{
+        flex-wrap: wrap;
+    }
+    .overview-top > .card-item{
+        width: 50%;
+    }
+    .overview .recent-info{
+        flex-wrap: wrap;
+    }
+    .overview .recent-info > .card-item{
+        width: 100%;
     }
     .dashboard-top .amount-div{
         padding: 20px;
@@ -1224,66 +1166,28 @@ button:active, button:focus, input:active, input:focus{
     }
 }
 @media only screen and (max-width: 536px){
-    .dashboard{
+    .overview{
         padding-top: 0;
     }
-    .dashboard-top{
-        display: flex;
+    .overview-top{
         flex-wrap: wrap;
-    }
-    .dashboard-top > .card-item:first-child{
-        width: 100%;
-        padding-right: 0;
         margin-bottom: 20px;
     }
-    .dashboard-top > .card-item:last-child{
-        width: 100%;
-        padding-left: 0;
-    }
-    .dashboard-top .amount-div{
-        height: 150px;
-    }
-    .dashboard-top .amount{
-        font-size: 36px;
-    }
-    .dashboard-top .small{
-        font-size: 24px;
-    }
-    .dashboard-top .tip-div{
-        height: auto;
-        z-index: 1;
-    }
-    .dashboard-top .tip-div h3{
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .dashboard-top .tip-div p{
+    .overview-top > .card-item{
         width: 50%;
+        padding: 7.5px 5px;
     }
-    .dashboard-top .tip-div .tip-image{
-       height: auto;
-       width: 40%;
-       position: absolute;
-       top: 15px;
-       right: 20px;
+    .overview-top > .card-item > .card{
+        padding: 15px 10px;
     }
-    .recent-top{
+    .overview .recent-info{
+        flex-wrap: wrap;
+    }
+    .overview .recent-info > .card-item{
+        width: 100%;
+        padding: 15px 5px;
+    }
+    .overview .recent-accounts .recent-top{
         padding: 15px 20px;
-        border-bottom: 1px solid #eaeaea;
-        display: flex;
-        align-items: center;
-    }
-    .recent-body{
-        padding: 15px 20px;
-    }
-    .recent-day{
-        margin-bottom: 10px;
-    }
-    .recent-day > .transaction{
-        padding: 10px;
-        font-size: 12px;
-    }
-    .recent-day > .transaction > p:last-child{
-        margin-left: 20px;
     }
 }
