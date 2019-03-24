@@ -1191,3 +1191,125 @@ button:active, button:focus, input:active, input:focus{
         padding: 15px 20px;
     }
 }
+  /* *************** */
+ /* accounts styles */
+/* *************** */
+.accounts{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.accounts > .all-accounts{
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+}
+.accounts > .all-accounts > .top{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+}
+.accounts .top select{
+    height: 36px;
+    margin-top: 5px;
+    border: 1px solid #920BC1;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    background: transparent;
+}
+.accounts .top select:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.accounts > .all-accounts > .body{
+    padding: 10px 30px;
+}
+.accounts .body table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.accounts .body table tr:first-child:hover{
+    background: initial;
+}
+.accounts .body table tr:hover{
+    background: linear-gradient(0deg, rgba(124, 116, 254, 0.04), rgba(124, 116, 254, 0.04));
+}
+.accounts .body table th{
+    font-weight: bold;
+}
+.accounts .body table th, .accounts .body table td{
+    text-align: left;
+    padding: 10px 20px;
+}
+.accounts .body table th:first-child, .accounts .body table td:first-child{
+    padding-left: 0;
+}
+.accounts .body table td > .savings{
+    display: inline-block;
+    background: #FFD710;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: auto;
+}
+.accounts .body table td > .current{
+    display: inline-block;
+    background: #14DA9E;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: auto;
+}
+.accounts .body table td > button{
+    width: 72px;
+    height: 26px;
+    border: 1.5px solid #920BC1;
+    color: #920BC1;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: ease-in 0.15s;
+}
+.accounts .body table td > button:hover{
+    background: #920BC1;
+    color: #ffffff;
+}
+@media only screen and (max-width: 900px){
+    .accounts{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .accounts table{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 536px){
+    .accounts{
+        padding-top: 0;
+    }
+    .accounts .all-accounts > .top{
+        padding: 10px 15px;
+    }
+    .accounts > .all-accounts > .body{
+        padding: 10px 15px;
+    }
+    .accounts .top > h3{
+        font-size: 14px;
+    }
+    .accounts .top > select{
+        font-size: 14px;
+    }
+    .accounts table{
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+}
