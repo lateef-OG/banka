@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Banka</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="navbar-toggler order-first" type="button" onclick="openNav()">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <img src="../assets/logo-white.svg" alt="" class="navbar-logo">
+        </div>
+        <div class="navbar-right">
+            <p>Hi, Lateef</p>
+            <a href="admin/profile.html">
+                <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="navbar-avi">
+            </a>
+            <a href="login.html">
+                <button class="logout-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+    <nav id="sidebar">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="sidebar-top">
+            <!-- <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="sidebar-avi"> -->
+            <p class="name">Admin</p>
+            <p class="email">admin@banka.com</p>
+        </div>
+        <div class="menu-items">
+            <a href="overview.html" class="active">Overview</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="users.html">Users</a>
+        </div>
+    </nav>
+    <main class="overview">
+        <div class="overview-top">
+            <div class="card-item">
+                <div class="card total-transactions">
+                    <h3>&#8358;200 Million</h3>
+                    <p>Total Transactions</p>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card total-savings">
+                    <h3>345</h3>
+                    <p>Savings Accounts</p>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card total-current">
+                    <h3>105</h3>
+                    <p>Current Accounts</p>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card total-staff">
+                    <h3>27</h3>
+                    <p>Staff Members</p>
+                </div>
+            </div>
+        </div>
+        <div class="recent-info">
+            <div class="card-item">
+                <div class="card recent-accounts">
+                    <div class="recent-top">
+                        <i class="fa fa-circle"></i>
+                        <p>Recently Created Accounts</p>
+                    </div>
+                    <div class="recent-body">
+                        <div class="account">
+                            <p>Savings - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                        <div class="account">
+                            <p>Current - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                        <div class="account">
+                            <p>Current - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                        <div class="account">
+                            <p>Current - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                        <div class="account">
+                            <p>Savings - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                        <div class="account">
+                            <p>Current - Lateef Ogunbadejo</p>
+                            <p>8096752435</p>
+                        </div>
+                    </div>
+                    <div class="recent-bottom">
+                        <button class="view-all">View All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="card recent-accounts">
+                    <div class="recent-top">
+                        <i class="fa fa-circle"></i>
+                        <p>Recently Created Users</p>
+                    </div>
+                    <div class="recent-body">
+                        <div class="account">
+                            <p>Ajoke Silva</p>
+                            <p>Admin</p>
+                        </div>
+                        <div class="account">
+                            <p>Danjuma Suleman</p>
+                            <p>Staff</p>
+                        </div>
+                        <div class="account">
+                            <p>Danjuma Suleman</p>
+                            <p>Staff</p>
+                        </div>
+                        <div class="account">
+                            <p>Ajoke Silva</p>
+                            <p>Admin</p>
+                        </div>
+                        <div class="account">
+                            <p>Danjuma Suleman</p>
+                            <p>Staff</p>
+                        </div>
+                        <div class="account">
+                            <p>Ajoke Silva</p>
+                            <p>Admin</p>
+                        </div>
+                    </div>
+                    <div class="recent-bottom">
+                        <button class="view-all">View All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/app.js"></script>
+</body>
+</html>
