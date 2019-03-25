@@ -1319,9 +1319,9 @@ button:active, button:focus, input:active, input:focus{
         overflow-x: auto;
     }
 }
-  /* *************** */
+  /* ************ */
  /* users styles */
-/* *************** */
+/* ************ */
 .users{
     margin-top: 100px;
     margin-left: 290px;
@@ -1448,5 +1448,67 @@ button:active, button:focus, input:active, input:focus{
     }
     .users .body table th:last-child, .users .body table td:last-child{
         padding-right: 15px;
+    }
+}
+  /* ****************** */
+ /* create user styles */
+/* ****************** */
+.create-user{
+    width: 400px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create-user > .title{
+    color: #920BC1;
+    margin-bottom: 30px;
+}
+.create-user > .user-form{
+    width: 100%;
+}
+.create-user > .user-form label{
+    width: 100%;
+    font-size: 14px;
+}
+.create-user > .user-form input,
+.create-user > .user-form select{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.create-user > .user-form input:focus,
+.create-user > .user-form select:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.create-user > .user-form button{
+    height: 36px;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 10px;
+}
+.create-user > .user-form .btn-div{
+    width: 100;
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 536px){
+    .change-pass-div{
+        width: 270px;
+        padding: 20px 10px;
     }
 }
