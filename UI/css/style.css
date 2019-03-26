@@ -1192,6 +1192,179 @@ button:active, button:focus, input:active, input:focus{
     }
 }
   /* *************** */
+ /* account styles */
+/* *************** */
+.account{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.account > .account-details{
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    padding: 30px;
+    margin-bottom: 15px;
+}
+.account > .account-details > .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:25px;
+}
+.account > .account-details > .top h3:first-child{
+    background: #920BC1;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.account > .account-details > .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.account > .account-details > .bottom button{
+    width: 156px;
+    height: 36px;
+    border: 1.5px solid #BC3E06;
+    color: #ffffff;
+    background: #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.account > .account-details > h5{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.account > .account-details > .bottom p{
+    font-size: 14px;
+}
+@media only screen and (max-width: 900px){
+    .account{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+}
+@media only screen and (max-width: 536px){
+    .account{
+        padding-top: 0;
+    }
+    .account .account-details{
+        padding: 10px 15px;
+    }
+    .account .top > h3{
+        font-size: 14px;
+    }
+    .account .account-details h5{
+        font-size: 12px;
+    }
+    .account .account-details .bottom p{
+        font-size: 12px;
+    }
+    .account .account-details .bottom button{
+        font-size: 12px;
+        height: 30px;
+        width: auto;
+    }
+    .accounts table{
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+  /* ********************* */
+ /* delete account styles */
+/* ********************* */
+.delete-account{
+    width: 400px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.delete-account > p{
+    color: #BC3E06;
+    margin-bottom: 20px;
+}
+.delete-account button:first-child{
+    width: 71px;
+    height: 30px;
+    border: 1.5px solid #BC3E06;
+    color: #ffffff;
+    background: #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.delete-account button:last-child{
+    width: 71px;
+    height: 30px;
+    border: 1px solid #BC3E06;
+    color: #BC3E06;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.create-user > .title{
+    color: #920BC1;
+    margin-bottom: 30px;
+}
+.create-user > .user-form{
+    width: 100%;
+}
+.create-user > .user-form label{
+    width: 100%;
+    font-size: 14px;
+}
+.create-user > .user-form input,
+.create-user > .user-form select{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.create-user > .user-form input:focus,
+.create-user > .user-form select:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.create-user > .user-form button{
+    height: 36px;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 10px;
+}
+.create-user > .user-form .btn-div{
+    width: 100;
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 536px){
+    .create-user{
+        width: 270px;
+        padding: 20px 10px;
+    }
+}
+  /* *************** */
  /* accounts styles */
 /* *************** */
 .accounts{
@@ -1507,7 +1680,7 @@ button:active, button:focus, input:active, input:focus{
     justify-content: center;
 }
 @media only screen and (max-width: 536px){
-    .change-pass-div{
+    .create-user{
         width: 270px;
         padding: 20px 10px;
     }
