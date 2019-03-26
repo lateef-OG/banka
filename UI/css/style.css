@@ -1194,37 +1194,37 @@ button:active, button:focus, input:active, input:focus{
   /* *************** */
  /* account styles */
 /* *************** */
-.account{
+.user-account{
     margin-top: 100px;
     margin-left: 290px;
     padding: 40px;
     padding-right: 10%;
 }
-.account > .account-details{
+.user-account > .account-details{
     background: #ffffff;
     border-radius: 4px;
     box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
     padding: 30px;
     margin-bottom: 15px;
 }
-.account > .account-details > .top{
+.user-account > .account-details > .top{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom:25px;
 }
-.account > .account-details > .top h3:first-child{
+.user-account > .account-details > .top h3:first-child{
     background: #920BC1;
     color: #ffffff;
     padding: 5px 10px;
     border-radius: 4px;
 }
-.account > .account-details > .bottom{
+.user-account > .account-details > .bottom{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.account > .account-details > .bottom button{
+.user-account > .account-details > .bottom button{
     width: 156px;
     height: 36px;
     border: 1.5px solid #BC3E06;
@@ -1234,63 +1234,66 @@ button:active, button:focus, input:active, input:focus{
     font-size: 14px;
     font-weight: bold;
 }
-.account > .account-details > h5{
+.user-account > .account-details > h5{
     font-size: 16px;
     margin-bottom: 10px;
 }
-.account > .account-details > .bottom p{
+.user-account > .account-details > .bottom p{
     font-size: 14px;
 }
-.account .recent-top{
+.user-account .recent-top{
     position: relative;
 }
-.account .recent-top .btn-div{
+.user-account .recent-top .btn-div{
     position: absolute;
     right: 30px;
 }
-.account .recent-top .btn-div button{
+.user-account .recent-top .btn-div a{
+    text-decoration: none;
+}
+.user-account .recent-top .btn-div button{
     height: 30px;
     border-radius: 4px;
     font-size: 12px;
     color: #ffffff;
 }
-.account .recent-top .btn-div button.credit{
+.user-account .recent-top .btn-div button.credit{
     border: 1px solid #14DA9E;
     background: #14DA9E;
 }
-.account .recent-top .btn-div button.debit{
+.user-account .recent-top .btn-div button.debit{
     border: 1px solid #BC3E06;
     background: #BC3E06;
 }
 @media only screen and (max-width: 900px){
-    .account{
+    .user-account{
         margin-top: 100px;
         margin-left: 0;
         padding: 40px 5%;
     }
 }
 @media only screen and (max-width: 536px){
-    .account{
+    .user-account{
         padding-top: 0;
     }
-    .account .account-details{
+    .user-account .account-details{
         padding: 10px 15px;
     }
-    .account .top > h3{
+    .user-account .top > h3{
         font-size: 14px;
     }
-    .account .account-details h5{
+    .user-account .account-details h5{
         font-size: 12px;
     }
-    .account .account-details .bottom p{
+    .user-account .account-details .bottom p{
         font-size: 12px;
     }
-    .account .account-details .bottom button{
+    .user-account .account-details .bottom button{
         font-size: 12px;
         height: 30px;
         width: auto;
     }
-    .accounts table{
+    .user-accounts table{
         font-size: 12px;
         width: 100%;
         display: block;
@@ -1510,7 +1513,10 @@ button:active, button:focus, input:active, input:focus{
     padding: 5px 10px;
     width: auto;
 }
-.accounts .body table td > button{
+.accounts .body table td a{
+    text-decoration: none;
+}
+.accounts .body table td button{
     width: 72px;
     height: 26px;
     border: 1.5px solid #920BC1;
