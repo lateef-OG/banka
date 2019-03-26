@@ -1241,6 +1241,27 @@ button:active, button:focus, input:active, input:focus{
 .account > .account-details > .bottom p{
     font-size: 14px;
 }
+.account .recent-top{
+    position: relative;
+}
+.account .recent-top .btn-div{
+    position: absolute;
+    right: 30px;
+}
+.account .recent-top .btn-div button{
+    height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #ffffff;
+}
+.account .recent-top .btn-div button.credit{
+    border: 1px solid #14DA9E;
+    background: #14DA9E;
+}
+.account .recent-top .btn-div button.debit{
+    border: 1px solid #BC3E06;
+    background: #BC3E06;
+}
 @media only screen and (max-width: 900px){
     .account{
         margin-top: 100px;
@@ -1276,7 +1297,6 @@ button:active, button:focus, input:active, input:focus{
         overflow-x: auto;
     }
 }
-
   /* ********************* */
  /* delete account styles */
 /* ********************* */
@@ -1312,19 +1332,39 @@ button:active, button:focus, input:active, input:focus{
     font-weight: bold;
     margin-left: 15px;
 }
-.create-user > .title{
-    color: #920BC1;
-    margin-bottom: 30px;
+@media only screen and (max-width: 536px){
+    .delete-account{
+        width: 270px;
+        padding: 20px 10px;
+    }
 }
-.create-user > .user-form{
-    width: 100%;
+  /* *************************** */
+ /* credit/debit account styles */
+/* *************************** */
+.credit-account{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
 }
-.create-user > .user-form label{
+.credit-account .card{
+    width: 50%;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    padding: 20px 40px;
+}
+.credit-account .card > h3{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.credit-account .card .credit-form label{
     width: 100%;
     font-size: 14px;
 }
-.create-user > .user-form input,
-.create-user > .user-form select{
+.credit-account .card .credit-form input{
     width: 100%;
     height: 38px;
     margin-bottom: 15px;
@@ -1335,13 +1375,31 @@ button:active, button:focus, input:active, input:focus{
     font-size: 14px;
     margin-top: 5px;
 }
-.create-user > .user-form input:focus,
-.create-user > .user-form select:focus{
+.credit-account .card .credit-form input:focus{
     outline: none;
     border: 1px solid #920BC1;
     transition: ease-in 0.15s;
 }
-.create-user > .user-form button{
+.credit-account .card .credit-form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    resize: none;
+}
+.credit-account .card .credit-form textarea:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.credit-account .card .credit-form .btn-div{
+    display: flex;
+    justify-content: center;
+}
+.credit-account .card .credit-form button{
     height: 36px;
     width: 50%;
     padding-right: 20px;
@@ -1353,15 +1411,22 @@ button:active, button:focus, input:active, input:focus{
     border: 1px solid #920BC1;
     margin-top: 10px;
 }
-.create-user > .user-form .btn-div{
-    width: 100;
-    display: flex;
-    justify-content: center;
+@media only screen and (max-width: 900px){
+    .credit-account{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .credit-account .card{
+        width: 60%;
+    }
 }
 @media only screen and (max-width: 536px){
-    .create-user{
-        width: 270px;
-        padding: 20px 10px;
+    .credit-account .card{
+        width: 100%;
+    }
+    .credit-account .card .credit-form button{
+        width: 100%;
     }
 }
   /* *************** */
