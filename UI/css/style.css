@@ -1512,3 +1512,165 @@ button:active, button:focus, input:active, input:focus{
         padding: 20px 10px;
     }
 }
+  /* ************ */
+ /* user styles */
+/* ************ */
+.view-user{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.view-user > .user-card{
+    width: 60%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+}
+.view-user > .user-card > .badge-name-div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.view-user > .user-card > .badge-name-div > .badge{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #920BC1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.view-user > .user-card > .badge-name-div h3{
+    margin-bottom: 10px;
+}
+.view-user > .user-card > .badge-name-div p{
+    font-size: 12px;
+    background: #14DA9E;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.users > .all-users > .top{
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+}
+.users .top button{
+    height: 36px;
+    margin-top: 5px;
+    border: 1px solid #920BC1;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+}
+.users > .all-users > .body{
+    padding: 10px 0;
+}
+.users .body table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.users .body table tr{
+    border-bottom: 0.5px solid #DADDE8;
+}
+.users .body table tr:last-child{
+    border-bottom: 0;
+}
+.users .body table tr:first-child:hover{
+    background: initial;
+}
+.users .body table tr:hover{
+    background: linear-gradient(0deg, rgba(124, 116, 254, 0.04), rgba(124, 116, 254, 0.04));
+}
+.users .body table th{
+    font-weight: bold;
+}
+.users .body table th, .users .body table td{
+    text-align: left;
+    padding: 10px 20px;
+}
+.users .body table th:first-child, .users .body table td:first-child{
+    padding-left: 30px;
+}
+.users .body table td > .inactive{
+    display: inline-block;
+    background: #BC3E06;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: auto;
+}
+.users .body table td > .active{
+    display: inline-block;
+    background: #14DA9E;
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: auto;
+}
+.users .body table td > button{
+    width: 72px;
+    height: 26px;
+    border: 1.5px solid #920BC1;
+    color: #920BC1;
+    background: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: ease-in 0.15s;
+}
+.users .body table td > button:hover{
+    background: #920BC1;
+    color: #ffffff;
+}
+@media only screen and (max-width: 900px){
+    .users{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .users table{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 536px){
+    .users{
+        padding-top: 0;
+    }
+    .users .all-users > .top{
+        padding: 10px 15px;
+    }
+    .users > .all-users > .body{
+        padding: 10px 0;
+    }
+    .users .top > h3{
+        font-size: 14px;
+    }
+    .users .top > select{
+        font-size: 14px;
+    }
+    .users table{
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+    .users .body table th, .users .body table td{
+        text-align: left;
+        padding: 10px 0 10px 15px;
+    }
+    .users .body table th:last-child, .users .body table td:last-child{
+        padding-right: 15px;
+    }
+}
