@@ -1039,7 +1039,7 @@ button:active, button:focus, input:active, input:focus{
 }
 .overview-top{
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .overview-top > .card-item{
     width: 25%;
@@ -1072,6 +1072,33 @@ button:active, button:focus, input:active, input:focus{
 .overview .recent-info > .card-item{
     width: 50%;
     padding: 15px;
+}
+.staff.overview .recent-info > .card-item{
+    width: 100%;
+    padding: 15px;
+}
+.staff.overview .btn-div{
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.staff.overview .btn-div button{
+    width: 156px;
+    height: 36px;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.staff.overview .btn-div .credit-btn{
+    border: 1px solid #14DA9E;
+    background: #14DA9E;
+    margin-right: 20px;
+}
+.staff.overview .btn-div .debit-btn{
+    border: 1px solid #BC3E06;
+    background: #BC3E06;
 }
 .overview .recent-info > .card-item .card{
     background: #ffffff;
@@ -1109,7 +1136,7 @@ button:active, button:focus, input:active, input:focus{
     justify-content: center;
     border-top: 1px solid #eaeaea;
 }
-.overview .recent-accounts .recent-bottom > .view-all{
+.overview .recent-accounts .recent-bottom .view-all{
     height: 36px;
     width: 120px;
     background: #920BC1;;
@@ -1189,6 +1216,23 @@ button:active, button:focus, input:active, input:focus{
     }
     .overview .recent-accounts .recent-top{
         padding: 15px 20px;
+    }
+    .staff.overview .btn-div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .staff.overview .btn-div button{
+        width: 156px;
+        height: 36px;
+        color: #ffffff;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .staff.overview .btn-div .credit-btn{
+        border: 1px solid #14DA9E;
+        background: #14DA9E;
+        margin-right: 20px;
     }
 }
   /* *************** */
