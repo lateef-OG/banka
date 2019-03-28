@@ -1801,120 +1801,40 @@ button:active, button:focus, input:active, input:focus{
     border-radius: 3px;
     color: #ffffff;
 }
-.users > .all-users > .top{
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eaeaea;
+.view-user > .user-card > h4{
+    margin-top: 20px;
 }
-.users .top button{
+.view-user > .user-card > .btn-div{
+    margin-top: 20px;
+}
+.view-user > .user-card > .btn-div button{
     height: 36px;
-    margin-top: 5px;
-    border: 1px solid #920BC1;
-    border-radius: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 14px;
-    background: #920BC1;
+    border: 1.5px solid #BC3E06;
     color: #ffffff;
-}
-.users > .all-users > .body{
-    padding: 10px 0;
-}
-.users .body table{
-    width: 100%;
-    border-collapse: collapse;
-}
-.users .body table tr{
-    border-bottom: 0.5px solid #DADDE8;
-}
-.users .body table tr:last-child{
-    border-bottom: 0;
-}
-.users .body table tr:first-child:hover{
-    background: initial;
-}
-.users .body table tr:hover{
-    background: linear-gradient(0deg, rgba(124, 116, 254, 0.04), rgba(124, 116, 254, 0.04));
-}
-.users .body table th{
-    font-weight: bold;
-}
-.users .body table th, .users .body table td{
-    text-align: left;
-    padding: 10px 20px;
-}
-.users .body table th:first-child, .users .body table td:first-child{
-    padding-left: 30px;
-}
-.users .body table td > .inactive{
-    display: inline-block;
     background: #BC3E06;
-    color: #ffffff;
     border-radius: 3px;
-    padding: 5px 10px;
-    width: auto;
-}
-.users .body table td > .active{
-    display: inline-block;
-    background: #14DA9E;
-    color: #ffffff;
-    border-radius: 3px;
-    padding: 5px 10px;
-    width: auto;
-}
-.users .body table td > button{
-    width: 72px;
-    height: 26px;
-    border: 1.5px solid #920BC1;
-    color: #920BC1;
-    background: transparent;
-    border-radius: 3px;
+    font-size: 14px;
     font-weight: bold;
-    transition: ease-in 0.15s;
+    padding-right: 10px;
+    padding-left: 10px;
 }
-.users .body table td > button:hover{
-    background: #920BC1;
-    color: #ffffff;
+.view-user > .user-card > .btn-div button:first-child{
+    border: 1.5px solid #BC3E06;
+    color: #BC3E06;
+    background: transparent;
 }
 @media only screen and (max-width: 900px){
-    .users{
+    .view-user{
         margin-top: 100px;
         margin-left: 0;
         padding: 40px 5%;
     }
-    .users table{
-        font-size: 14px;
+    .view-user > .user-card{
+        width: 100%;
     }
 }
 @media only screen and (max-width: 536px){
-    .users{
+    .view-user{
         padding-top: 0;
-    }
-    .users .all-users > .top{
-        padding: 10px 15px;
-    }
-    .users > .all-users > .body{
-        padding: 10px 0;
-    }
-    .users .top > h3{
-        font-size: 14px;
-    }
-    .users .top > select{
-        font-size: 14px;
-    }
-    .users table{
-        font-size: 12px;
-        width: 100%;
-        display: block;
-        overflow-x: auto;
-    }
-    .users .body table th, .users .body table td{
-        text-align: left;
-        padding: 10px 0 10px 15px;
-    }
-    .users .body table th:last-child, .users .body table td:last-child{
-        padding-right: 15px;
     }
 }
