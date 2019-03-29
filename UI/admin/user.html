@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Banka</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="navbar-toggler order-first" type="button" onclick="openNav()">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <img src="../assets/logo-white.svg" alt="" class="navbar-logo">
+        </div>
+        <div class="navbar-right">
+            <p>Hi, Lateef</p>
+            <a href="admin/profile.html">
+                <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="navbar-avi">
+            </a>
+            <a href="login.html">
+                <button class="logout-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+    <nav id="sidebar">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="sidebar-top">
+            <!-- <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="sidebar-avi"> -->
+            <p class="name">Admin</p>
+            <p class="email">admin@banka.com</p>
+        </div>
+        <div class="menu-items">
+            <a href="overview.html">Overview</a>
+            <a href="accounts.html">Accounts</a>
+            <a href="users.html" class="active">Users</a>
+        </div>
+    </nav>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="create-user">
+                <div class="title">Create User</div>
+                <form class="user-form">
+                    <label>
+                        First name
+                        <input type="text">
+                    </label>
+                    <label>
+                        Last name
+                        <input type="text">
+                    </label>
+                    <label>
+                        Email
+                        <input type="email">
+                    </label>
+                    <label>
+                        User Type
+                        <select>
+                            <option>Select user type</option>
+                            <option value="savings">Admin</option>
+                            <option value="current">Staff</option>
+                        </select>
+                    </label>
+                    <div class="btn-div">
+                        <button class="create-btn">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+    <main class="view-user">
+        <div class="user-card">
+            <div class="badge-name-div">
+                <div class="badge">Ad</div>
+                <div>
+                    <h3>Adejoke Gbadamosi</h3>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <p>Email: adejokegbadamosi@email.com</p>
+            <p>Created on: March 20, 2019</p>
+            <h4>Last Action</h4>
+            <p>Credited 809400567(Tade Babajimi)'s account with &#8358;5000</p>
+            <div class="btn-div">
+                <button>Deactivate User</button>
+                <button>Delete User</button>
+            </div>
+        </div>
+    </main>
+    <script src="../js/app.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+
+</html>

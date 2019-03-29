@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Banka</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="navbar-toggler order-first" type="button" onclick="openNav()">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+            <img src="../assets/logo-white.svg" alt="" class="navbar-logo">
+        </div>
+        <div class="navbar-right">
+            <p>Hi, Lateef</p>
+            <a href="admin/profile.html">
+                <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="navbar-avi">
+            </a>
+            <a href="login.html">
+                <button class="logout-btn">Logout</button>
+            </a>
+        </div>
+    </nav>
+    <nav id="sidebar">
+        <a class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="sidebar-top">
+            <!-- <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="" class="sidebar-avi"> -->
+            <p class="name">Admin</p>
+            <p class="email">admin@banka.com</p>
+        </div>
+        <div class="menu-items">
+            <a href="overview.html">Overview</a>
+            <a href="accounts.html" class="active">Accounts</a>
+            <a href="users.html">Users</a>
+        </div>
+    </nav>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="delete-account">
+              <p>Are you sure you want to delete account?</p>
+              <div>
+                  <button>Yes</button>
+                  <button>Cancel</button>
+              </div>
+          </div>
+        </div>  
+    </div>
+    <main class="user-account">
+        <div class="account-details">
+            <div class="top">
+                <h3>Balance - &#8358;200,000.<span class="small">00</span></h3>
+                <h3>Savings Account</h3>
+            </div>
+            <h5>Account Name: Falilat Akanke</h5>
+            <h5>Account Number: 8094567833</h5>
+            <div class="bottom">
+                <p>Created on March 20, 2019</p>
+                <button id="openModal">Delete Account</button>
+            </div>
+        </div>
+        <div class="recent-trans">
+            <div class="recent-top">
+                <i class="fa fa-circle"></i>
+                <p>Transaction History</p>
+                <div class="btn-div">
+                    <a href="credit-account.html">
+                        <button class="credit">Credit Account</button>
+                    </a>
+                    <a href="debit-account.html">
+                        <button class="debit">Debit Account</button>
+                    </a>
+                </div>
+            </div>
+            <div class="recent-body">
+                <div class="recent-day">
+                    <p class="date">March 20, 2019</p>
+                    <div class="transaction">
+                        <p>SMS Alert charges for the month of FEBRUARY</p>
+                        <p class="debit">&#8358;36.00</p>
+                    </div>
+                    <div class="transaction">
+                        <p>FBNMOBILE:LATEEF OGUNBADEJO/PAYMENT for food</p>
+                        <p class="credit">&#8358;5000.00</p>
+                    </div>
+                </div>
+                <div class="recent-day">
+                    <p class="date">March 19, 2019</p>
+                    <div class="transaction">
+                        <p>FBNMOBILE:LATEEF OGUNBADEJO/PAYMENT for food</p>
+                        <p class="credit">&#8358;5000.00</p>
+                    </div>
+                </div>
+                <div class="recent-day">
+                    <p class="date">March 18, 2019</p>
+                    <div class="transaction">
+                        <p>BANKA NIP TRANSFER TO FIRST BANK - LATEEF OGUNBADEJO</p>
+                        <p class="debit">&#8358;5000.00</p>
+                    </div>
+                    <div class="transaction">
+                        <p>COMM BANKA NIP TRANSFER TO FIRST BANK - LATEEF OGUNBADEJO</p>
+                        <p class="debit">&#8358;50.00</p>
+                    </div>
+                    <div class="transaction">
+                        <p>VAT BANKA NIP TRANSFER TO FIRST BANK - LATEEF OGUNBADEJO</p>
+                        <p class="debit">&#8358;2.50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/app.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+
+</html>

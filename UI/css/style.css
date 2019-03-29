@@ -1039,7 +1039,7 @@ button:active, button:focus, input:active, input:focus{
 }
 .overview-top{
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .overview-top > .card-item{
     width: 25%;
@@ -1072,6 +1072,33 @@ button:active, button:focus, input:active, input:focus{
 .overview .recent-info > .card-item{
     width: 50%;
     padding: 15px;
+}
+.staff.overview .recent-info > .card-item{
+    width: 100%;
+    padding: 15px;
+}
+.staff.overview .btn-div{
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.staff.overview .btn-div button{
+    width: 156px;
+    height: 36px;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.staff.overview .btn-div .credit-btn{
+    border: 1px solid #14DA9E;
+    background: #14DA9E;
+    margin-right: 20px;
+}
+.staff.overview .btn-div .debit-btn{
+    border: 1px solid #BC3E06;
+    background: #BC3E06;
 }
 .overview .recent-info > .card-item .card{
     background: #ffffff;
@@ -1109,7 +1136,7 @@ button:active, button:focus, input:active, input:focus{
     justify-content: center;
     border-top: 1px solid #eaeaea;
 }
-.overview .recent-accounts .recent-bottom > .view-all{
+.overview .recent-accounts .recent-bottom .view-all{
     height: 36px;
     width: 120px;
     background: #920BC1;;
@@ -1189,6 +1216,264 @@ button:active, button:focus, input:active, input:focus{
     }
     .overview .recent-accounts .recent-top{
         padding: 15px 20px;
+    }
+    .staff.overview .btn-div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .staff.overview .btn-div button{
+        width: 156px;
+        height: 36px;
+        color: #ffffff;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .staff.overview .btn-div .credit-btn{
+        border: 1px solid #14DA9E;
+        background: #14DA9E;
+        margin-right: 20px;
+    }
+}
+  /* *************** */
+ /* account styles */
+/* *************** */
+.user-account{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.user-account > .account-details{
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    padding: 30px;
+    margin-bottom: 15px;
+}
+.user-account > .account-details > .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:25px;
+}
+.user-account > .account-details > .top h3:first-child{
+    background: #920BC1;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.user-account > .account-details > .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user-account > .account-details > .bottom button{
+    width: 156px;
+    height: 36px;
+    border: 1.5px solid #BC3E06;
+    color: #ffffff;
+    background: #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.user-account > .account-details > h5{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.user-account > .account-details > .bottom p{
+    font-size: 14px;
+}
+.user-account .recent-top{
+    position: relative;
+}
+.user-account .recent-top .btn-div{
+    position: absolute;
+    right: 30px;
+}
+.user-account .recent-top .btn-div a{
+    text-decoration: none;
+}
+.user-account .recent-top .btn-div button{
+    height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #ffffff;
+}
+.user-account .recent-top .btn-div button.credit{
+    border: 1px solid #14DA9E;
+    background: #14DA9E;
+}
+.user-account .recent-top .btn-div button.debit{
+    border: 1px solid #BC3E06;
+    background: #BC3E06;
+}
+@media only screen and (max-width: 900px){
+    .user-account{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+}
+@media only screen and (max-width: 536px){
+    .user-account{
+        padding-top: 0;
+    }
+    .user-account .account-details{
+        padding: 10px 15px;
+    }
+    .user-account .top > h3{
+        font-size: 14px;
+    }
+    .user-account .account-details h5{
+        font-size: 12px;
+    }
+    .user-account .account-details .bottom p{
+        font-size: 12px;
+    }
+    .user-account .account-details .bottom button{
+        font-size: 12px;
+        height: 30px;
+        width: auto;
+    }
+    .user-accounts table{
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+    }
+}
+  /* ********************* */
+ /* delete account styles */
+/* ********************* */
+.delete-account{
+    width: 400px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.delete-account > p{
+    color: #BC3E06;
+    margin-bottom: 20px;
+}
+.delete-account button:first-child{
+    width: 71px;
+    height: 30px;
+    border: 1.5px solid #BC3E06;
+    color: #ffffff;
+    background: #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.delete-account button:last-child{
+    width: 71px;
+    height: 30px;
+    border: 1px solid #BC3E06;
+    color: #BC3E06;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+@media only screen and (max-width: 536px){
+    .delete-account{
+        width: 270px;
+        padding: 20px 10px;
+    }
+}
+  /* *************************** */
+ /* credit/debit account styles */
+/* *************************** */
+.credit-account{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+}
+.credit-account .card{
+    width: 50%;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+    padding: 20px 40px;
+}
+.credit-account .card > h3{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.credit-account .card .credit-form label{
+    width: 100%;
+    font-size: 14px;
+}
+.credit-account .card .credit-form input{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.credit-account .card .credit-form input:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.credit-account .card .credit-form textarea{
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+    resize: none;
+}
+.credit-account .card .credit-form textarea:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.credit-account .card .credit-form .btn-div{
+    display: flex;
+    justify-content: center;
+}
+.credit-account .card .credit-form button{
+    height: 36px;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 900px){
+    .credit-account{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .credit-account .card{
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 536px){
+    .credit-account .card{
+        width: 100%;
+    }
+    .credit-account .card .credit-form button{
+        width: 100%;
     }
 }
   /* *************** */
@@ -1272,7 +1557,10 @@ button:active, button:focus, input:active, input:focus{
     padding: 5px 10px;
     width: auto;
 }
-.accounts .body table td > button{
+.accounts .body table td a{
+    text-decoration: none;
+}
+.accounts .body table td button{
     width: 72px;
     height: 26px;
     border: 1.5px solid #920BC1;
@@ -1319,9 +1607,9 @@ button:active, button:focus, input:active, input:focus{
         overflow-x: auto;
     }
 }
-  /* *************** */
+  /* ************ */
  /* users styles */
-/* *************** */
+/* ************ */
 .users{
     margin-top: 100px;
     margin-left: 290px;
@@ -1448,5 +1736,149 @@ button:active, button:focus, input:active, input:focus{
     }
     .users .body table th:last-child, .users .body table td:last-child{
         padding-right: 15px;
+    }
+}
+  /* ****************** */
+ /* create user styles */
+/* ****************** */
+.create-user{
+    width: 400px;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create-user > .title{
+    color: #920BC1;
+    margin-bottom: 30px;
+}
+.create-user > .user-form{
+    width: 100%;
+}
+.create-user > .user-form label{
+    width: 100%;
+    font-size: 14px;
+}
+.create-user > .user-form input,
+.create-user > .user-form select{
+    width: 100%;
+    height: 38px;
+    margin-bottom: 15px;
+    border: 1px solid #D9D3D3;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.create-user > .user-form input:focus,
+.create-user > .user-form select:focus{
+    outline: none;
+    border: 1px solid #920BC1;
+    transition: ease-in 0.15s;
+}
+.create-user > .user-form button{
+    height: 36px;
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 14px;
+    background: #920BC1;
+    color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #920BC1;
+    margin-top: 10px;
+}
+.create-user > .user-form .btn-div{
+    width: 100;
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 536px){
+    .create-user{
+        width: 270px;
+        padding: 20px 10px;
+    }
+}
+  /* ************ */
+ /* user styles */
+/* ************ */
+.view-user{
+    margin-top: 100px;
+    margin-left: 290px;
+    padding: 40px;
+    padding-right: 10%;
+}
+.view-user > .user-card{
+    width: 60%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(63, 63, 68, 0.15), 0px 0px 0px rgba(63, 63, 68, 0.05);
+}
+.view-user > .user-card > .badge-name-div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.view-user > .user-card > .badge-name-div > .badge{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #920BC1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.view-user > .user-card > .badge-name-div h3{
+    margin-bottom: 10px;
+}
+.view-user > .user-card > .badge-name-div p{
+    font-size: 12px;
+    background: #14DA9E;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.view-user > .user-card > h4{
+    margin-top: 20px;
+}
+.view-user > .user-card > .btn-div{
+    margin-top: 20px;
+}
+.view-user > .user-card > .btn-div button{
+    height: 36px;
+    border: 1.5px solid #BC3E06;
+    color: #ffffff;
+    background: #BC3E06;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.view-user > .user-card > .btn-div button:first-child{
+    border: 1.5px solid #BC3E06;
+    color: #BC3E06;
+    background: transparent;
+}
+@media only screen and (max-width: 900px){
+    .view-user{
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 40px 5%;
+    }
+    .view-user > .user-card{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 536px){
+    .view-user{
+        padding-top: 0;
     }
 }
