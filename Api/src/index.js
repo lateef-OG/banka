@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import Users from './routes/users.route';
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.get('/', (req, res) => {
     message: 'Welcome to Banka API',
   });
 });
+
+app.use('/api/v1/users', Users);
 
 app.use((req, res, next) => {
   const error = new Error('Not found');
