@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import Users from './routes/users.route';
+import Accounts from './routes/accounts.route';
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/users', Users);
+app.use('/api/v1/accounts', Accounts);
 
 app.use((req, res, next) => {
   const error = new Error('Not found');
