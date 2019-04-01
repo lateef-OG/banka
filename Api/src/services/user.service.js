@@ -21,6 +21,22 @@ class UserService {
     return allUsers;
   }
 
+  static getUserById(id) {
+    const { users } = UserData;
+    const parsedId = parseInt(id, Number);
+    const userExists = users.find(userDetails => parsedId === userDetails.id);
+    if (!userExists) {
+      return {
+        error: true,
+        message: 'User not found',
+        errorCode: 404,
+      };
+    }
+    return {
+      ...userExists,
+    };
+  }
+
   static signup(user) {
     const {
       email,

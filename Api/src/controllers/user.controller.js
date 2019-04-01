@@ -9,6 +9,22 @@ class UserController {
     });
   }
 
+  static getSingleUser(req, res) {
+    const { id } = req.params;
+    const foundUser = UserService.getUserById(id);
+    if (foundUser.error) {
+      const { errorCode, message } = foundUser;
+      return res.status(errorCode).json({
+        status: errorCode,
+        message,
+      });
+    }
+    return res.status(200).json({
+      status: 200,
+      user: foundUser,
+    });
+  }
+
   static signup(req, res) {
     const user = req.body;
     const createdUser = UserService.signup(user);
@@ -20,7 +36,7 @@ class UserController {
         errors,
       });
     }
-    return res.status(201).send({
+    return res.status(201).json({
       status: 201,
       data: createdUser,
     });
