@@ -34,7 +34,6 @@ class AccountService {
     const id = newId;
     const { firstName, lastName, email } = UserService.getUserById(parsedOwnerId);
     const newAccount = new Account(id, accountNumber, createdOn, owner, type, status, balance);
-    console.log(newAccount);
     AccountData.accounts = [...AccountData.accounts, newAccount];
     const response = {
       accountNumber,
