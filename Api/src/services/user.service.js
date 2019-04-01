@@ -4,6 +4,23 @@ import UserData from '../data/user.data';
 import User from '../models/user.model';
 
 class UserService {
+  static getUsers() {
+    const { users } = UserData;
+    const allUsers = users.map((user) => {
+      const userInstance = new User(
+        user.id,
+        user.email,
+        user.firstName,
+        user.lastName,
+        user.password,
+        user.type,
+        user.isAdmin,
+      );
+      return userInstance;
+    });
+    return allUsers;
+  }
+
   static signup(user) {
     const {
       email,
