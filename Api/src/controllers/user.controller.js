@@ -1,6 +1,14 @@
 import UserService from '../services/user.service';
 
 class UserController {
+  static listUsers(req, res) {
+    const allUsers = UserService.getUsers();
+    return res.status(200).json({
+      status: 200,
+      data: allUsers,
+    });
+  }
+
   static signup(req, res) {
     const user = req.body;
     const createdUser = UserService.signup(user);
