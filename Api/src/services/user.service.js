@@ -41,6 +41,24 @@ class UserService {
       ...newUser,
     };
   }
+
+  static login(user) {
+    const { email, password } = user;
+    const { users } = UserData;
+    const userExists = users.find(userDetails => email === userDetails.email && password === userDetails.password);
+    if (!userExists) {
+      return {
+        error: true,
+        message: 'Incorrect email or password',
+        errorCode: 400,
+      };
+    }
+    const token = Helper.generateToken(userExists);
+    return {
+      token,
+      ...userExists,
+    };
+  }
 }
 
 export default UserService;
