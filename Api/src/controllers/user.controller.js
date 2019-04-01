@@ -17,6 +17,21 @@ class UserController {
       data: createdUser,
     });
   }
+
+  static login(req, res) {
+    const user = req.body;
+    const loggedinUser = UserService.login(user);
+    if (loggedinUser.error) {
+      return res.status(400).json({
+        status: 400,
+        message: loggedinUser.message,
+      });
+    }
+    return res.status(200).json({
+      status: 200,
+      data: loggedinUser,
+    });
+  }
 }
 
 export default UserController;
