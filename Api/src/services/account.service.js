@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import moment from 'moment';
 import AccountData from '../data/accounts.data';
 import Account from '../models/account.model';
@@ -64,8 +65,8 @@ class AccountService {
 
   static getSingleAccount(accountNumber) {
     const { accounts } = AccountData;
-    // const parsedId = parseInt(id, Number);
-    const accountExists = accounts.find(accountDetails => accountNumber === accountDetails.id);
+    const parsedNumber = parseInt(accountNumber, Number);
+    const accountExists = accounts.find(accountDetails => parsedNumber === accountDetails.accountNumber);
     if (!accountExists) {
       return {
         error: true,
