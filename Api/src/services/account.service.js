@@ -78,6 +78,24 @@ class AccountService {
       ...accountExists,
     };
   }
+
+  static updateAccountStatus(accountNumber, status) {
+    const statuses = ['active', 'dormant'];
+    if (!statuses.includes(status)) {
+      return {
+        error: true,
+        message: 'Status should either be active or dormant',
+        errorCode: 422,
+      };
+    }
+    const { accounts } = AccountData;
+    const parsedNumber = parseInt(accountNumber, Number);
+    accounts.find(account => parsedNumber === account.accountNumber).status = status;
+    const updatedAccount = this.getSingleAccount(parsedNumber);
+    return {
+      ...updatedAccount,
+    };
+  }
 }
 
 export default AccountService;
