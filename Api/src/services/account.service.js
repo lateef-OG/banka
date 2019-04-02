@@ -45,6 +45,22 @@ class AccountService {
     };
     return response;
   }
+
+  static listAccounts() {
+    const { accounts } = AccountData;
+    return accounts.map((account) => {
+      const allAccounts = new Account(
+        account.id,
+        account.accountNumber,
+        account.createdOn,
+        account.owner,
+        account.type,
+        account.status,
+        account.balance,
+      );
+      return allAccounts;
+    });
+  }
 }
 
 export default AccountService;
