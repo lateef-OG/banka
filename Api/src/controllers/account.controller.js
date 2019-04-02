@@ -15,6 +15,14 @@ class AccountController {
       data: newAccount,
     });
   }
+
+  static listAccounts(req, res) {
+    const accounts = AccountService.listAccounts();
+    return res.status(200).json({
+      status: 200,
+      data: accounts,
+    });
+  }
 }
 
 export default AccountController;
