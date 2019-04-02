@@ -39,6 +39,23 @@ class AccountController {
       data: account,
     });
   }
+
+  static updateAccountStatus(req, res) {
+    const { accountNumber } = req.params;
+    const { status } = req.body;
+    const updatedAccount = AccountService.updateAccountStatus(accountNumber, status);
+    if (updatedAccount.error) {
+      const { errorCode, message } = updatedAccount;
+      return res.status(errorCode).json({
+        status: errorCode,
+        error: message,
+      });
+    }
+    return res.status(201).json({
+      status: 201,
+      data: updatedAccount,
+    });
+  }
 }
 
 export default AccountController;
