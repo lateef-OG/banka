@@ -61,6 +61,22 @@ class AccountService {
       return allAccounts;
     });
   }
+
+  static getSingleAccount(accountNumber) {
+    const { accounts } = AccountData;
+    // const parsedId = parseInt(id, Number);
+    const accountExists = accounts.find(accountDetails => accountNumber === accountDetails.id);
+    if (!accountExists) {
+      return {
+        error: true,
+        message: 'Account not found',
+        errorCode: 404,
+      };
+    }
+    return {
+      ...accountExists,
+    };
+  }
 }
 
 export default AccountService;
