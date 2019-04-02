@@ -23,6 +23,22 @@ class AccountController {
       data: accounts,
     });
   }
+
+  static getAccount(req, res) {
+    const { accountNumber } = req.params;
+    const account = AccountService.getSingleAccount(accountNumber);
+    if (account.error) {
+      const { errorCode, message } = account;
+      return res.status(errorCode).json({
+        status: errorCode,
+        error: message,
+      });
+    }
+    return res.status(200).json({
+      status: 200,
+      data: account,
+    });
+  }
 }
 
 export default AccountController;
