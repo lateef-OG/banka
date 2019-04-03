@@ -7,7 +7,7 @@ import Transaction from '../models/transaction.model';
 import AccountService from './account.service';
 
 class TransactionService {
-  static creditAccount(accountNumber, amount, cashier) {
+  static accountTransaction(accountNumber, amount, cashier, type) {
     if (!amount || !cashier) {
       return {
         error: true,
@@ -24,14 +24,20 @@ class TransactionService {
         errorCode,
       };
     }
-    const accountBalance = accountDetails.balance + amount;
+    let accountBalance = accountDetails.balance;
+    if (type === 'credit') {
+      accountBalance += amount;
+    }
+    if (type === 'debit') {
+      accountBalance -= amount;
+    }
     const createdOn = moment().format('DD-MM-YYYY');
     const { transactions } = TransactionData;
     const transactionsLength = transactions.length;
     const lastId = transactions[transactionsLength - 1].id;
     const newId = lastId + 1;
     const id = newId;
-    const transactionType = 'credit';
+    const transactionType = type;
 
     const newTransaction = new Transaction(id, accountNumber, createdOn, cashier, amount, transactionType, accountBalance);
     TransactionData.transactions = [...TransactionData.transactions, newTransaction];
