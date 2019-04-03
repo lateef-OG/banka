@@ -56,6 +56,22 @@ class AccountController {
       data: updatedAccount,
     });
   }
+
+  static deleteAccount(req, res) {
+    const { accountNumber } = req.params;
+    const feedback = AccountService.deleteAccount(accountNumber);
+    if (feedback.error) {
+      const { errorCode, message } = feedback;
+      return res.status(errorCode).json({
+        status: errorCode,
+        error: message,
+      });
+    }
+    return res.status(201).json({
+      status: 201,
+      message: feedback.message,
+    });
+  }
 }
 
 export default AccountController;

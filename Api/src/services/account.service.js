@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable max-len */
 import moment from 'moment';
 import AccountData from '../data/accounts.data';
@@ -94,6 +95,23 @@ class AccountService {
     const updatedAccount = this.getSingleAccount(parsedNumber);
     return {
       ...updatedAccount,
+    };
+  }
+
+  static deleteAccount(accountNumber) {
+    const parsedNumber = parseInt(accountNumber, Number);
+    const accountExists = this.getSingleAccount(parsedNumber);
+    if (accountExists.error) {
+      const { message, errorCode, error } = accountExists;
+      return {
+        error,
+        message,
+        errorCode,
+      };
+    }
+    AccountData.accounts = AccountData.accounts.filter(account => accountNumber != account.accountNumber);
+    return {
+      message: 'Account deleted successfully',
     };
   }
 }
