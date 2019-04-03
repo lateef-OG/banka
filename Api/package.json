@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon --exec babel-node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --watch --require @babel/register"
   },
   "keywords": [],
   "author": "Lateef Ogunbadejo",
@@ -21,9 +21,12 @@
     "@babel/core": "^7.4.0",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
     "nodemon": "^1.18.10"
   }
 }
