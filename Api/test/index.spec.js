@@ -156,4 +156,30 @@ describe('Test for account endpoints', () => {
         done();
       });
   });
+  it('it should update an account status', (done) => {
+    chai.request(app)
+      .patch('/api/v1/accounts/8030000001')
+      .send({
+        status: 'active',
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        assert.equal(res.body.status, 201);
+        assert.isObject(res.body.data);
+        done();
+      });
+  });
+  it('it should throw error for wrong status value', (done) => {
+    chai.request(app)
+      .patch('/api/v1/accounts/8030000001')
+      .send({
+        status: 'wrong',
+      })
+      .end((err, res) => {
+        res.should.have.status(422);
+        assert.equal(res.body.status, 422);
+        assert.equal(res.body.error, 'Status should either be active or dormant');
+        done();
+      });
+  });
 });
