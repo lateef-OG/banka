@@ -91,12 +91,13 @@ class AccountService {
     }
     const { accounts } = AccountData;
     const parsedNumber = parseInt(accountNumber, Number);
-    const accountExists = accounts.find(accountDetails => parsedNumber === accountDetails.accountNumber);
-    if (!accountExists) {
+    const accountExists = this.getSingleAccount(parsedNumber);
+    if (accountExists.error) {
+      const { message, errorCode, error } = accountExists;
       return {
-        error: true,
-        message: 'Account not found',
-        errorCode: 404,
+        error,
+        message,
+        errorCode,
       };
     }
     accounts.find(account => parsedNumber === account.accountNumber).status = status;
