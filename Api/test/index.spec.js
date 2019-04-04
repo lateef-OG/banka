@@ -136,4 +136,24 @@ describe('Test for account endpoints', () => {
         done();
       });
   });
+  it('it should get a single account using account number', (done) => {
+    chai.request(app)
+      .get('/api/v1/accounts/8030000001')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isObject(res.body.data);
+        done();
+      });
+  });
+  it('it should throw error for wrong account number', (done) => {
+    chai.request(app)
+      .get('/api/v1/accounts/8030000004')
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.error, 'Account not found');
+        done();
+      });
+  });
 });
