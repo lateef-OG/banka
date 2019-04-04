@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/v1/users', Users);
+app.use('/api/v1/auth', Users);
 app.use('/api/v1/accounts', Accounts);
 app.use('/api/v1/transactions', Transactions);
 
