@@ -208,4 +208,18 @@ describe('Test for transactions endpoints', () => {
         done();
       });
   });
+  it('it should debit a user account', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/8030000002/debit')
+      .send({
+        amount: 3000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        assert.equal(res.body.status, 201);
+        assert.isObject(res.body.data);
+        done();
+      });
+  });
 });
