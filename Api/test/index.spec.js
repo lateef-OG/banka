@@ -193,19 +193,19 @@ describe('Test for account endpoints', () => {
       });
   });
 });
-// describe('Test for transactions endpoints', () => {
-//   it('it should credit a user account', (done) => {
-//     chai.request(app)
-//       .post('/api/v1/transactions/8030000002/credit')
-//       .send({
-//         amount: 3000,
-//         cashier: 2,
-//       })
-//       .end((err, res) => {
-//         res.should.have.status(201);
-//         assert.equal(res.body.status, 201);
-//         assert.isObject(res.body.data);
-//         done();
-//       });
-//   });
-// });
+describe('Test for transactions endpoints', () => {
+  it('it should credit a user account', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/8030000002/credit')
+      .send({
+        amount: 3000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        assert.equal(res.body.status, 201);
+        assert.isObject(res.body.data);
+        done();
+      });
+  });
+});
