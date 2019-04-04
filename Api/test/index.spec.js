@@ -19,7 +19,7 @@ describe('Welcome', () => {
   });
 });
 
-describe('Test for authentication endpoint', () => {
+describe('Test for authentication endpoints', () => {
   /**
    * test for Signup endpoint
    */
@@ -106,6 +106,23 @@ describe('Test for authentication endpoint', () => {
         res.should.have.status(400);
         assert.equal(res.body.status, 400);
         assert.equal(res.body.message, 'Incorrect email or password');
+        done();
+      });
+  });
+});
+describe('Test for account endpoints', () => {
+  it('it should create an account', (done) => {
+    chai.request(app)
+      .post('/api/v1/accounts')
+      .send({
+        owner: 1,
+        type: 'savings',
+        balance: 20000,
+      })
+      .end((err, res) => {
+        res.should.have.status(201);
+        assert.equal(res.body.status, 201);
+        assert.isObject(res.body.data);
         done();
       });
   });

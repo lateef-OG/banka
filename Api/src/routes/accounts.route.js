@@ -7,6 +7,6 @@ router.get('/', AccountController.listAccounts);
 router.get('/:accountNumber', AccountController.getAccount);
 router.patch('/:accountNumber', AccountController.updateAccountStatus);
 router.delete('/:accountNumber', AccountController.deleteAccount);
-router.post('/create-account', AccountController.createAccount);
+router.post('/', AccountController.createAccount);
 
 export default router;
