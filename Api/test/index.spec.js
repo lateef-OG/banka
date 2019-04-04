@@ -126,4 +126,14 @@ describe('Test for account endpoints', () => {
         done();
       });
   });
+  it('it should list all accounts', (done) => {
+    chai.request(app)
+      .get('/api/v1/accounts')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isArray(res.body.data);
+        done();
+      });
+  });
 });
