@@ -7,6 +7,8 @@ before_script:
   - chmod 0755 node_modules/.bin/mocha
 script:  
   - npm run test:travis
+after_script:
+  - npm run coverage
 cache:
   directories:
     - "Api/node_modules"
