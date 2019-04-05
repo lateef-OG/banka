@@ -3,3 +3,5 @@ Banka is a light-weight core banking application that powers banking operations 
 
 [![Build Status](https://travis-ci.org/lateef-OG/banka.svg?branch=dev)](https://travis-ci.org/lateef-OG/banka)
 [![Coverage Status](https://coveralls.io/repos/github/lateef-OG/banka/badge.svg?branch=ch-integrate-coveralls-165152572)](https://coveralls.io/github/lateef-OG/banka?branch=ch-integrate-coveralls-165152572)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1a93d58fca21551a1d3a/test_coverage)](https://codeclimate.com/github/lateef-OG/banka/test_coverage)
+![Maintainability](https://api.codeclimate.com/v1/badges/1a93d58fca21551a1d3a/maintainability)](https://codeclimate.com/github/lateef-OG/banka/maintainability)
