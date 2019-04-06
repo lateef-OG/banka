@@ -39,12 +39,7 @@ class UserService {
 
   static signup(user) {
     const {
-      email,
-      firstName,
-      lastName,
-      password,
-      type,
-      isAdmin,
+      email, firstName, lastName, password, type, isAdmin,
     } = user;
     const errors = Helper.validateUser(user);
     if (errors.length > 0) {

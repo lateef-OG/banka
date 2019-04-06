@@ -48,30 +48,30 @@ class TransactionService {
     return newId;
   }
 
-  static accountTransaction(accountNumber, amount, cashier, type) {
+  static updateBalance(accountNumber, accountBalance) {
+    const parsedNumber = parseInt(accountNumber, Number);
+    const { accounts } = AccountData;
+    accounts.find(account => parsedNumber === account.accountNumber).balance = accountBalance;
+  }
+
+  static accountTransaction(accountNumber, amount, cashier, transactionType) {
     const validatedEntry = this.validateEntry(amount, cashier);
     if (validatedEntry.error) {
       return {
         ...validatedEntry,
       };
     }
-    const accountBalance = this.newBalance(amount, accountNumber, type);
+    const accountBalance = this.newBalance(amount, accountNumber, transactionType);
     if (accountBalance.error) {
       return {
         ...accountBalance,
       };
     }
     const createdOn = moment().format('DD-MM-YYYY');
-    const transactionType = type;
     const id = this.generateTransactionID();
-
     const newTransaction = new Transaction(id, accountNumber, createdOn, cashier, amount, transactionType, accountBalance);
     TransactionData.transactions = [...TransactionData.transactions, newTransaction];
-
-    const parsedNumber = parseInt(accountNumber, Number);
-    const { accounts } = AccountData;
-    accounts.find(account => parsedNumber === account.accountNumber).balance = accountBalance;
-
+    this.updateBalance(accountNumber, accountBalance);
     return {
       transactionId: id,
       accountNumber,
