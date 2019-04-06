@@ -41,21 +41,17 @@ class UserService {
     const {
       email, firstName, lastName, password, type, isAdmin,
     } = user;
-    const errors = Helper.validateUser(user);
-    if (errors.length > 0) {
+    const validatedUser = Helper.validateUser(user);
+    const { errors, error } = validatedUser;
+    if (errors.length > 0 && error) {
       return {
-        errors,
-        error: true,
-        errorCode: 422,
-        message: 'Some fields are missing.',
+        ...validatedUser,
       };
     }
     const validEmail = Helper.isEmailValid(email);
-    if (!validEmail) {
+    if (validEmail.error) {
       return {
-        error: true,
-        errorCode: 422,
-        message: 'Email provided is not valid',
+        ...validEmail,
       };
     }
     const { users } = UserData;
