@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.json({
+    status: 200,
     message: 'Welcome to Banka API',
   });
 });
