@@ -42,10 +42,10 @@ class UserService {
       email, firstName, lastName, password, type, isAdmin,
     } = user;
     const validatedUser = Helper.validateUser(user);
-    const { errors } = validatedUser;
-    if (errors.length > 0) {
+    const { errors, error } = validatedUser;
+    if (errors.length > 0 && error) {
       return {
-        ...errors,
+        ...validatedUser,
       };
     }
     const validEmail = Helper.isEmailValid(email);
