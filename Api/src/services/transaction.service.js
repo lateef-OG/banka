@@ -7,7 +7,7 @@ import Transaction from '../models/transaction.model';
 import AccountService from './account.service';
 
 class TransactionService {
-  static accountTransaction(accountNumber, amount, cashier, type) {
+  static validateEntry(amount, cashier) {
     if (!amount || !cashier) {
       return {
         error: true,
@@ -15,6 +15,12 @@ class TransactionService {
         errorCode: 422,
       };
     }
+    return {
+      error: false,
+    };
+  }
+
+  static newBalance(amount, accountNumber, type) {
     const accountDetails = AccountService.getSingleAccount(accountNumber);
     if (accountDetails.error) {
       const { error, message, errorCode } = accountDetails;
@@ -31,13 +37,33 @@ class TransactionService {
     if (type === 'debit') {
       accountBalance -= amount;
     }
-    const createdOn = moment().format('DD-MM-YYYY');
+    return accountBalance;
+  }
+
+  static generateTransactionID() {
     const { transactions } = TransactionData;
     const transactionsLength = transactions.length;
     const lastId = transactions[transactionsLength - 1].id;
     const newId = lastId + 1;
-    const id = newId;
+    return newId;
+  }
+
+  static accountTransaction(accountNumber, amount, cashier, type) {
+    const validatedEntry = this.validateEntry(amount, cashier);
+    if (validatedEntry.error) {
+      return {
+        ...validatedEntry,
+      };
+    }
+    const accountBalance = this.newBalance(amount, accountNumber, type);
+    if (accountBalance.error) {
+      return {
+        ...accountBalance,
+      };
+    }
+    const createdOn = moment().format('DD-MM-YYYY');
     const transactionType = type;
+    const id = this.generateTransactionID();
 
     const newTransaction = new Transaction(id, accountNumber, createdOn, cashier, amount, transactionType, accountBalance);
     TransactionData.transactions = [...TransactionData.transactions, newTransaction];
