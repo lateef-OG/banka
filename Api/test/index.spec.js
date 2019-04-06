@@ -13,7 +13,33 @@ describe('Welcome', () => {
     chai.request(app)
       .get('/')
       .end((err, res) => {
+        res.should.have.status(200);
         assert.equal(res.body.message, 'Welcome to Banka API');
+        done();
+      });
+  });
+});
+
+describe('Not found', () => {
+  it('should throw error for non existent endpoint', (done) => {
+    chai.request(app)
+      .get('/blah')
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.error, 'resource not found');
+        done();
+      });
+  });
+});
+
+
+describe('Internal server error', () => {
+  it('should return error message', (done) => {
+    chai.request(app)
+      .get('/api/v1/transactions/error')
+      .end((err, res) => {
+        res.should.have.status(500);
+        assert.equal(res.body.error, 'Something went wrong!');
         done();
       });
   });
@@ -109,6 +135,36 @@ describe('Test for authentication endpoints', () => {
         done();
       });
   });
+  it('it should return all users', (done) => {
+    chai.request(app)
+      .get('/api/v1/auth/users')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isArray(res.body.data);
+        done();
+      });
+  });
+  it('it should return a single user', (done) => {
+    chai.request(app)
+      .get('/api/v1/auth/users/1')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isObject(res.body.user);
+        done();
+      });
+  });
+  it('it should throw an error for wrong id for single user', (done) => {
+    chai.request(app)
+      .get('/api/v1/auth/users/0')
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.message, 'User not found');
+        done();
+      });
+  });
 });
 describe('Test for account endpoints', () => {
   it('it should create an account', (done) => {
@@ -182,6 +238,19 @@ describe('Test for account endpoints', () => {
         done();
       });
   });
+  it('it should throw error for wrong account number when updating', (done) => {
+    chai.request(app)
+      .patch('/api/v1/accounts/803000001')
+      .send({
+        status: 'active',
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.error, 'Account not found');
+        done();
+      });
+  });
   it('it should delete an account', (done) => {
     chai.request(app)
       .delete('/api/v1/accounts/8030000001')
@@ -189,6 +258,16 @@ describe('Test for account endpoints', () => {
         res.should.have.status(201);
         assert.equal(res.body.status, 201);
         assert.equal(res.body.message, 'Account deleted successfully');
+        done();
+      });
+  });
+  it('it should throw error for wrong account number when deleting', (done) => {
+    chai.request(app)
+      .delete('/api/v1/accounts/803000001')
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.error, 'Account not found');
         done();
       });
   });
@@ -219,6 +298,46 @@ describe('Test for transactions endpoints', () => {
         res.should.have.status(201);
         assert.equal(res.body.status, 201);
         assert.isObject(res.body.data);
+        done();
+      });
+  });
+  it('it should throw error for empty body when making a transaction', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/8030000002/credit')
+      .send({
+      })
+      .end((err, res) => {
+        res.should.have.status(422);
+        assert.equal(res.body.status, 422);
+        assert.equal(res.body.error, 'amount and cashier fields are required');
+        done();
+      });
+  });
+  it('it should throw error for wrong account number when crediting an account', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/803000002/credit')
+      .send({
+        amount: 3000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.error, 'Account not found');
+        done();
+      });
+  });
+  it('it should throw error for wrong account number when crediting an account', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/803000002/debit')
+      .send({
+        amount: 3000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(404);
+        assert.equal(res.body.status, 404);
+        assert.equal(res.body.error, 'Account not found');
         done();
       });
   });

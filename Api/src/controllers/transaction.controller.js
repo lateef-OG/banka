@@ -34,6 +34,10 @@ class TransactionController {
       data: transaction,
     });
   }
+
+  static serverError() {
+    throw new Error('Something went wrong!');
+  }
 }
 
 export default TransactionController;

@@ -10,9 +10,6 @@ class AccountService {
     const defaultNumber = 8030000000;
     const { accounts } = AccountData;
     const accountsLength = accounts.length;
-    if (accountsLength === 0) {
-      return defaultNumber;
-    }
     const lastId = accounts[accountsLength - 1].id;
     const newId = lastId + 1;
     const accountNumber = defaultNumber + newId;

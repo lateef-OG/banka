@@ -30,8 +30,8 @@ class UserController {
     const createdUser = UserService.signup(user);
     if (createdUser.error) {
       const { errorCode, message, errors } = createdUser;
-      return res.status(errorCode || 400).json({
-        status: errorCode || 400,
+      return res.status(errorCode).json({
+        status: errorCode,
         message,
         errors,
       });
