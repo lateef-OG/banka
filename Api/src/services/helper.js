@@ -8,12 +8,7 @@ const Helper = {
   },
   validateUser(user) {
     const {
-      email,
-      firstName,
-      lastName,
-      password,
-      type,
-      isAdmin,
+      email, firstName, lastName, password, type, isAdmin,
     } = user;
     let errors = [];
     if (!email) {
