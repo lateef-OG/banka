@@ -273,6 +273,16 @@ describe('Test for account endpoints', () => {
   });
 });
 describe('Test for transactions endpoints', () => {
+  it('it should return all transactions', (done) => {
+    chai.request(app)
+      .get('/api/v1/transactions')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isArray(res.body.data);
+        done();
+      });
+  });
   it('it should credit a user account', (done) => {
     chai.request(app)
       .post('/api/v1/transactions/8030000002/credit')
