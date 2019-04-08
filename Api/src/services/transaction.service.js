@@ -69,7 +69,7 @@ class TransactionService {
     }
     const createdOn = moment().format('DD-MM-YYYY');
     const id = this.generateTransactionID();
-    const newTransaction = new Transaction(id, accountNumber, createdOn, cashier, amount, transactionType, accountBalance);
+    const newTransaction = new Transaction(id, createdOn, accountNumber, amount, cashier, accountBalance, transactionType);
     TransactionData.transactions = [...TransactionData.transactions, newTransaction];
     this.updateBalance(accountNumber, accountBalance);
     return {
@@ -80,6 +80,23 @@ class TransactionService {
       transactionType,
       accountBalance,
     };
+  }
+
+  static fetchTransactions() {
+    const { transactions } = TransactionData;
+    const allTransactions = transactions.map((transaction) => {
+      const transactionInstance = new Transaction(
+        transaction.id,
+        transaction.createdOn,
+        transaction.accountNumber,
+        transaction.amount,
+        transaction.cashier,
+        transaction.accountBalance,
+        transaction.transactionType,
+      );
+      return transactionInstance;
+    });
+    return allTransactions;
   }
 }
 
