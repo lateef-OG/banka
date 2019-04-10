@@ -15,7 +15,7 @@ Banka is a light-weight core banking application that powers banking operations 
 - [PostgresSQL](https://postgresql.org)
 
 ## Endpoints
-####Authentication
+#### Authentication
 - POST **api/v1/auth/signup** Create a user account.
     request body: 
     ```bash
@@ -38,7 +38,7 @@ Banka is a light-weight core banking application that powers banking operations 
     ```
 - GET **api/vi/auth/users** Lists all the users in the system.
 - GET **api/v1/auth/users/:userId** Gets a particular user by id.
-####Accounts
+#### Accounts
 - POST **api/v1/accounts/** Creates a bank account.
     request body:
     ```bash
@@ -58,7 +58,7 @@ Banka is a light-weight core banking application that powers banking operations 
     }
     ```
 - DELETE **api/v1/accounts/:accountId** Delete an account having a particular id
-####Transactions
+#### Transactions
 - GET **api/v1/transactions/** List all transactions in the system.
 - POST **api/v1/transactions/:accountNumber/credit** Performs a credit transaction on a particular account number.
     request body:
