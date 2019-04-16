@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import Helper from './helper';
+import Helper from './Helper';
 import UserData from '../data/user.data';
-import User from '../models/user.model';
+import User from '../models/user';
 
 class UserService {
   static getUsers() {

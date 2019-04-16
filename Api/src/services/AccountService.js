@@ -2,8 +2,8 @@
 /* eslint-disable max-len */
 import moment from 'moment';
 import AccountData from '../data/accounts.data';
-import Account from '../models/account.model';
-import UserService from './user.service';
+import Account from '../models/account';
+import UserService from './UserService';
 
 class AccountService {
   static createAccountNumber() {

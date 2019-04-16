@@ -3,8 +3,8 @@
 import moment from 'moment';
 import TransactionData from '../data/transaction.data';
 import AccountData from '../data/accounts.data';
-import Transaction from '../models/transaction.model';
-import AccountService from './account.service';
+import Transaction from '../models/transaction';
+import AccountService from './AccountService';
 
 class TransactionService {
   static validateEntry(amount, cashier) {
@@ -47,7 +47,7 @@ class TransactionService {
           error: true,
           message: 'Insufficient funds available',
           errorCode: 422,
-        }
+        };
       }
       accountBalance -= amount;
     }
