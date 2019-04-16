@@ -204,7 +204,7 @@ describe('Test for account endpoints', () => {
   });
   it('it should throw error for wrong account number', (done) => {
     chai.request(app)
-      .get('/api/v1/accounts/8030000004')
+      .get('/api/v1/accounts/80300004')
       .end((err, res) => {
         res.should.have.status(404);
         assert.equal(res.body.status, 404);
@@ -273,6 +273,16 @@ describe('Test for account endpoints', () => {
   });
 });
 describe('Test for transactions endpoints', () => {
+  it('it should return all transactions', (done) => {
+    chai.request(app)
+      .get('/api/v1/transactions')
+      .end((err, res) => {
+        res.should.have.status(200);
+        assert.equal(res.body.status, 200);
+        assert.isArray(res.body.data);
+        done();
+      });
+  });
   it('it should credit a user account', (done) => {
     chai.request(app)
       .post('/api/v1/transactions/8030000002/credit')
@@ -338,6 +348,34 @@ describe('Test for transactions endpoints', () => {
         res.should.have.status(404);
         assert.equal(res.body.status, 404);
         assert.equal(res.body.error, 'Account not found');
+        done();
+      });
+  });
+  it('it should throw error for insufficient funds when debiting an account', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/8030000002/debit')
+      .send({
+        amount: 30000000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(422);
+        assert.equal(res.body.status, 422);
+        assert.equal(res.body.error, 'Insufficient funds available');
+        done();
+      });
+  });
+  it('it should throw error when account is dormant', (done) => {
+    chai.request(app)
+      .post('/api/v1/transactions/8030000003/debit')
+      .send({
+        amount: 30000000,
+        cashier: 2,
+      })
+      .end((err, res) => {
+        res.should.have.status(422);
+        assert.equal(res.body.status, 422);
+        assert.equal(res.body.error, 'Account is dormant, please reactivate account');
         done();
       });
   });

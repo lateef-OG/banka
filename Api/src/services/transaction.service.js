@@ -30,11 +30,25 @@ class TransactionService {
         errorCode,
       };
     }
+    if (accountDetails.status === 'dormant') {
+      return {
+        error: true,
+        message: 'Account is dormant, please reactivate account',
+        errorCode: 422,
+      };
+    }
     let accountBalance = accountDetails.balance;
     if (type === 'credit') {
       accountBalance += amount;
     }
     if (type === 'debit') {
+      if (accountBalance < amount) {
+        return {
+          error: true,
+          message: 'Insufficient funds available',
+          errorCode: 422,
+        }
+      }
       accountBalance -= amount;
     }
     return accountBalance;
@@ -54,7 +68,9 @@ class TransactionService {
     accounts.find(account => parsedNumber === account.accountNumber).balance = accountBalance;
   }
 
-  static accountTransaction(accountNumber, amount, cashier, transactionType) {
+  static accountTransaction(accountNo, amount, cashier, transactionType) {
+    const parsedNumber = parseInt(accountNo, Number);
+    const accountNumber = parsedNumber;
     const validatedEntry = this.validateEntry(amount, cashier);
     if (validatedEntry.error) {
       return {
@@ -69,7 +85,7 @@ class TransactionService {
     }
     const createdOn = moment().format('DD-MM-YYYY');
     const id = this.generateTransactionID();
-    const newTransaction = new Transaction(id, accountNumber, createdOn, cashier, amount, transactionType, accountBalance);
+    const newTransaction = new Transaction(id, createdOn, accountNumber, amount, cashier, accountBalance, transactionType);
     TransactionData.transactions = [...TransactionData.transactions, newTransaction];
     this.updateBalance(accountNumber, accountBalance);
     return {
@@ -80,6 +96,23 @@ class TransactionService {
       transactionType,
       accountBalance,
     };
+  }
+
+  static fetchTransactions() {
+    const { transactions } = TransactionData;
+    const allTransactions = transactions.map((transaction) => {
+      const transactionInstance = new Transaction(
+        transaction.id,
+        transaction.createdOn,
+        transaction.accountNumber,
+        transaction.amount,
+        transaction.cashier,
+        transaction.accountBalance,
+        transaction.transactionType,
+      );
+      return transactionInstance;
+    });
+    return allTransactions;
   }
 }
 

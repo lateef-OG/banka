@@ -1,10 +1,14 @@
 {
   "name": "banka",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple online banking application",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/server.js",
     "start:dev": "nodemon --exec babel-node src/server.js",
+    "babel-build": "babel src -d dist",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run babel-build",
     "test": "mocha --watch --require @babel/register",
     "test:travis": "mocha **/*.spec.js --require @babel/register --exit",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
@@ -12,6 +16,7 @@
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
     "coverage": "nyc npm run test:travis && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage"
   },
+  "heroku-run-build-script": true,
   "keywords": [],
   "author": "Lateef Ogunbadejo",
   "license": "ISC",
@@ -23,8 +28,10 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
     "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.4.2",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
