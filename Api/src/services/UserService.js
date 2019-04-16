@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import Helper from './Helper';
+import Helper from './helper';
 import UserData from '../data/user.data';
 import User from '../models/user';
 
