@@ -10,9 +10,27 @@ Banka is a light-weight core banking application that powers banking operations 
 
 ##Built with
 - [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org)
 - [Express](https://expressjs.com)
 - [PostgresSQL](https://postgresql.org)
+
+
+## Installation
+1. Ensure you have Node.js and npm installed
+
+2. Clone this repo
+```bash
+$ git clone https://github.com/lateef-OG/banka
+```
+3. Change directory to the Api folder and Install Dependencies
+```bash
+cd Api
+npm install
+```
+4. Start the Application
+```bash
+npm start
+```
+5. View the Application in your browser on **localhost:4000**
 
 ## Endpoints
 #### Authentication
@@ -76,24 +94,23 @@ Banka is a light-weight core banking application that powers banking operations 
         "cashier": integer
     }
     ```
+## API Routes
 
-## Installation
-1. Ensure you have Node.js and npm installed
+|        DESCRIPTION        | HTTP METHOD | ROUTES                               |
+| :-----------------------: | ----------- | ------------------------------------ |
+| Create a user account     | POST        | /api/v1/auth/signup                  |
+| Logs a user in            | POST        | /api/v1/auth/login                   |
+| List all the users        | GET         | /api/vi/auth/users                   |
+| Fetch a user by id        | GET         | /api/v1/auth/users/:userId           |
+| Create a bank account     | POST        | /api/v1/accounts                     |
+| List all bank accounts    | GET         | /api/v1/accounts                     |
+| Fetch a single account    | GET         | /api/v1/accounts/:accountId          |
+| Change account status     | PATCH       | /api/v1/accounts/:accountNumber      |
+| Delete a bank account     | DELETE      | /api/v1/accounts/:accountNumber      |
+| List all transactions     | GET         | /api/v1/transactions                 |
+| Credit a bank account     | POST        | /api/v1/tranactions/:accountNumber/credit |
+| Debit a bank account      | POST        | /api/v1/tranactions/:accountNumber/debit |
 
-2. Clone this repo
-```bash
-$ git clone https://github.com/lateef-OG/banka
-```
-3. Change directory to the Api folder and Install Dependencies
-```bash
-cd Api
-npm install
-```
-4. Start the Application
-```bash
-npm start
-```
-5. View the Application in your browser on **localhost:4000**
 
 ## Authors
 * **Lateef Ogunbadejo**
