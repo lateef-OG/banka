@@ -1,4 +1,4 @@
-import TransactionService from '../services/transaction.service';
+import TransactionService from '../services/TransactionService';
 
 class TransactionController {
   static creditAccount(req, res) {

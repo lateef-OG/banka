@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import express from 'express';
 import bodyParser from 'body-parser';
-import Users from './routes/users.route';
-import Accounts from './routes/accounts.route';
-import Transactions from './routes/transactions.route';
+import Users from './routes/userRoute';
+import Accounts from './routes/accountRoute';
+import Transactions from './routes/transactionRoute';
 
 const app = express();
 

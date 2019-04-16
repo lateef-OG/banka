@@ -1,4 +1,4 @@
-import UserService from '../services/user.service';
+import UserService from '../services/UserService';
 
 class UserController {
   static listUsers(req, res) {

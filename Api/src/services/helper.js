@@ -10,11 +10,11 @@ const Helper = {
         error: true,
         errorCode: 422,
         message: 'Email provided is not valid',
-      }
+      };
     }
     return {
       error: false,
-    }
+    };
   },
   validateUser(user) {
     const {
